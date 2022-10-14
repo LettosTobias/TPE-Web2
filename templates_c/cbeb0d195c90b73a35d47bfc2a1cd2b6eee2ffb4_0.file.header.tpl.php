@@ -1,7 +1,31 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 4.2.1, created on 2022-10-14 20:11:26
+  from 'C:\xampp\HTDOCS\Web-2\TPE1\templates\header.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.2.1',
+  'unifunc' => 'content_6349a64e4141f6_40269041',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'cbeb0d195c90b73a35d47bfc2a1cd2b6eee2ffb4' => 
+    array (
+      0 => 'C:\\xampp\\HTDOCS\\Web-2\\TPE1\\templates\\header.tpl',
+      1 => 1665771071,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6349a64e4141f6_40269041 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 <head>
-    <base href="{BASE_URL}">
+    <base href="<?php echo BASE_URL;?>
+">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,25 +51,35 @@
                   Generos
                 </a>
                 <ul class="dropdown-menu">
-                  {foreach from=$genders item=$gender}
+                  <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['genders']->value, 'gender');
+$_smarty_tpl->tpl_vars['gender']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['gender']->value) {
+$_smarty_tpl->tpl_vars['gender']->do_else = false;
+?>
                   
-                  <li><a class="dropdown-item" href="gender/{$gender->genero}">{$gender->genero}</a></li>
+                  <li><a class="dropdown-item" href="gender/<?php echo $_smarty_tpl->tpl_vars['gender']->value->genero;?>
+"><?php echo $_smarty_tpl->tpl_vars['gender']->value->genero;?>
+</a></li>
     
-                  {/foreach}
+                  <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </ul>
               </li>
             </ul>
             <form class="d-flex" role="search">
                 
-                {if !isset($smarty.session.USER_ID)}
+                <?php if (!(isset($_SESSION['USER_ID']))) {?>
                   <li class="nav-item">
                     <button class= "btn btn-outline-dark"> <a class="nav-link" href="login" >Login</a></button>
                   </li>
-                {else} 
+                <?php } else { ?> 
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="logout">Logout ({$smarty.session.USER_EMAIL})</a>
+                    <a class="nav-link" aria-current="page" href="logout">Logout (<?php echo $_SESSION['USER_EMAIL'];?>
+)</a>
                   </li>
-                {/if}
+                <?php }?>
 
             </form>
           </div>
@@ -56,4 +90,5 @@
 
     </header>
 
-    <main class="container">
+    <main class="container"><?php }
+}

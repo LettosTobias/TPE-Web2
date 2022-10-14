@@ -14,16 +14,20 @@ private $smarty;
         $this->smarty->assign('genders' , $genders); 
                
         //muestro el template
-        $this->smarty->display('movieList.tpl');
+        $this->smarty->display('movieHome.tpl');
 
     }
 
     function showSelectedGender($selected){
 
         $this->smarty->assign('selected' , $selected);
-        $this->smarty->display('movieGender.tpl');
+        $this->smarty->display('movieList.tpl');
 
     }
+
+
+
+
     function showHeader($genders){
 
         $this->smarty->assign('genders' , $genders);
@@ -32,14 +36,20 @@ private $smarty;
 
 
 
+    function showUpdate($selectedMovie , $actionForm){
 
-    function showUpdate($pelicula , $estreno, $genero , $descripcion){
-
+        $this->smarty->assign('selectedMovie' , $selectedMovie); 
+        $this->smarty->assign('actionForm' , $actionForm);
+        $this->smarty->display('formulario.tpl');
         
-
 
     }
 
+    function showMovie($selectedMovie){
+
+        $this->smarty->assign('selectedMovie' , $selectedMovie);  
+        $this->smarty->display('selectedMovie.tpl');
+    }
    
 }
     

@@ -1,0 +1,57 @@
+.container{
+
+   
+    padding: 0%;
+    margin:3%;
+
+   
+}
+
+img{
+
+    height: 1.6rem;
+}
+
+
+#formUpdate{
+    
+    background-color: rgb(16, 181, 236);
+    border-radius: 1rem;
+    width: 30rem;
+    padding: 5%;
+}
+
+.formularioCont{
+    
+    margin: 2%;
+    border-radius: 1rem;
+    background-color: rgb(234, 100, 100);
+    width: 48.5rem;
+    padding: 1rem;
+
+}
+
+.imagenInput{
+
+    height: 7rem;
+    width: 10rem;
+}
+
+input{
+
+    margin:1%;
+    
+}
+
+.card-img-top{
+
+
+    height: fit-content;
+}
+
+.card-body{
+
+    display: flex;
+    justify-content: space-between;
+}
+

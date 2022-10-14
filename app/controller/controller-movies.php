@@ -1,11 +1,11 @@
 <?php
     require_once './app/view/view-movies.php';
-    require_once './app/model/db.php';
+    require_once './app/model/model-movie.php';
 
 class movieController{
 
     private $model;
-    private $controller;
+    private $view;
 
     function __construct(){
 
@@ -21,46 +21,73 @@ class movieController{
       $genders = $this->model->getAllGenders();
       $this->view->showHeader($genders);
       $this->view->showHome($genders);
-    
+
+
+    //trato de que me direccione una vez agregada la pelicula
+         
     }
 
 
     function addMovie(){
 
-        $pelicula = $_GET['pelicula'];
-        $estreno = $_GET['estreno'];
-        $genero = $_GET['genero'];
-        $descripcion = $_GET['descripcion'];
+        if(!empty($_POST['pelicula'] && $_POST['estreno'] && $_POST['genero'] && $_POST['descripcion'])){
 
-       $id = $this->model->insertMovie($pelicula, $estreno, $genero , $descripcion);
+            $pelicula = $_POST['pelicula'];
+            $estreno = $_POST['estreno'];
+            $genero = $_POST['genero'];
+            $descripcion = $_POST['descripcion']; 
+        }
+
+
+        if ($_FILES['imagen']['type'] == "image/jpg" ||
+            $_FILES['imagen']['type'] == "image/jpeg" ||
+            $_FILES['imagen']['type'] == "image/png"
+            ){ 
+            $this->model->insertMovie($pelicula, $estreno , $genero , $descripcion , $_FILES['imagen']['tmp_name']);
+            }
+            else{
+            $this->model->insertMovie($pelicula, $estreno, $genero , $descripcion);
+            }
        
-       header("location: " . BASE_URL);
+        
+       header("location: " . BASE_URL . "gender" . "/$genero");
     }
+
+
+
 
     function deleteMovie($id){
-
+       
+        $SelectedMovie = $this->model->getSelectedMovie($id);
         $this->model->deleteMovieByID($id);
-
-        header("location: " . BASE_URL);
+        
+            
+        header("location: " . BASE_URL . "gender" . "/$SelectedMovie->id_genero_fk" );
 
     }
 
 
 
-    function changeValoracion($id , $pelicula){
+    function changeValoracion($valoracion, $id){
 
-        if($id == 0){
-            
-            $id=0;
-            $this->model->setValoracion($id,$pelicula);
-        }
-        if($id == 1){
-            
-            $id = 1;
-            $this->model->setValoracion($id,$pelicula);
-        }
+       
         
-        header("location: " . BASE_URL);
+        if($valoracion == 0){
+            
+            $valoracion=0;
+            $this->model->setValoracion($valoracion,$id);
+        }
+        if($valoracion == 1){
+            
+            $valoracion = 1;
+            $this->model->setValoracion($valoracion,$id);
+        }
+
+            $SelectedMovie = $this->model->getSelectedMovie($id);
+            
+            header("location: " . BASE_URL . "gender" . "/$SelectedMovie->id_genero_fk " );
+       
+        
     }
 
 
@@ -70,23 +97,60 @@ class movieController{
         
         $genders = $this->model->getAllGenders();
         $selected = $this->model->getGender($gender);
-        $this->view->showHeader($genders);
+        $this->view->showHeader($genders);     
         $this->view->showSelectedGender($selected);
         
     }
 
 
-
-    // function updateMovie($id){
- 
-    //     $pelicula = $_GET['pelicula'];
-    //     $estreno = $_GET['estreno'];
-    //     $genero = $_GET['genero'];
-    //     $descripcion = $_GET['descripcion'];
+    
+    function updateMovie($id , $actionForm){
         
-     
 
-    //     $this->view->showUpdate ($pelicula , $estreno, $genero , $descripcion);
+        $SelectedMovie = $this->model->getSelectedMovie($id);
+        $this->view->showUpdate($SelectedMovie , $actionForm);
+      
+
+    
+    }
+
+
+    function setMovie(){
+
+       
         
-    // }
+        $id = $_POST['id'];
+        $estreno = $_POST['estreno'];
+        $genero = $_POST['genero'];
+        $descripcion = $_POST['descripcion'];
+        $pelicula = $_POST['pelicula'];
+
+         
+        $this->model->setMovieDB($pelicula, $estreno, $genero , $descripcion , $id);
+
+    
+        $SelectedMovie = $this->model->getSelectedMovie($id);
+        header("location: " . BASE_URL  . "gender" . "/$SelectedMovie->id_genero_fk");
+    
+
+       
+
+    }
+
+
+
+    function showMovie($id){
+
+        $genders = $this->model->getAllGenders();
+        $this->view->showHeader($genders);
+        $selectedMovie = $this->model->getSelectedMovie($id); 
+        $this->view->showMovie($selectedMovie); 
+        
+    }
+
+
+
+
+
+
 }
