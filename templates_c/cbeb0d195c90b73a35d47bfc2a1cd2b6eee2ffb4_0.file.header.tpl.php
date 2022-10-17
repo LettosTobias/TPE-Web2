@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-17 15:47:47
+/* Smarty version 4.2.1, created on 2022-10-17 16:21:27
   from 'C:\xampp\HTDOCS\Web-2\TPE1\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634d5d035bc3e4_24288144',
+  'unifunc' => 'content_634d64e7a70671_30262221',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cbeb0d195c90b73a35d47bfc2a1cd2b6eee2ffb4' => 
     array (
       0 => 'C:\\xampp\\HTDOCS\\Web-2\\TPE1\\templates\\header.tpl',
-      1 => 1666014465,
+      1 => 1666016486,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634d5d035bc3e4_24288144 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634d64e7a70671_30262221 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +30,7 @@ function content_634d5d035bc3e4_24288144 (Smarty_Internal_Template $_smarty_tpl)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./img/logo-peliculas.png">
     <link rel="stylesheet" href="css/estiloMovie.css" >
     <title>Peliculas</title>
 </head>
