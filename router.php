@@ -20,6 +20,7 @@ switch ($params[0]) {
 
     case 'login':
         $authController = new AuthController();
+        $movieController = new movieController();
         $authController->showFormLogin();
         break;
 

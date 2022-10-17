@@ -1,4 +1,4 @@
-{include 'header.tpl'}
+
 
 <div class="login mt-5 w-27 mx-auto">
     <form method="POST" action="validate">

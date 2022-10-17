@@ -1,30 +1,28 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-17 13:18:48
+/* Smarty version 4.2.1, created on 2022-10-17 15:59:03
   from 'C:\xampp\HTDOCS\Web-2\TPE1\templates\formulario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634d3a182629b0_30081581',
+  'unifunc' => 'content_634d5fa7727925_73707123',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '900b11084e12c7352d3f945a3d28a1df52983bf6' => 
     array (
       0 => 'C:\\xampp\\HTDOCS\\Web-2\\TPE1\\templates\\formulario.tpl',
-      1 => 1666005522,
+      1 => 1666015141,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_634d3a182629b0_30081581 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+function content_634d5fa7727925_73707123 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-    
+
 
 
 <form id="formUpdate" action="<?php echo $_smarty_tpl->tpl_vars['actionForm']->value;?>

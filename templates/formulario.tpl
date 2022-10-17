@@ -1,6 +1,5 @@
 
-{include file="header.tpl"}
-    
+
 
 
 <form id="formUpdate" action="{$actionForm}"   method="POST">

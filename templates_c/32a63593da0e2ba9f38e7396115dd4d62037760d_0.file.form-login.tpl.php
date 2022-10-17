@@ -1,29 +1,27 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-17 03:58:02
+/* Smarty version 4.2.1, created on 2022-10-17 15:57:18
   from 'C:\xampp\HTDOCS\Web-2\TPE1\templates\form-login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634cb6aa14afe8_21498947',
+  'unifunc' => 'content_634d5f3e63f3a5_23663740',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '32a63593da0e2ba9f38e7396115dd4d62037760d' => 
     array (
       0 => 'C:\\xampp\\HTDOCS\\Web-2\\TPE1\\templates\\form-login.tpl',
-      1 => 1665971875,
+      1 => 1666015036,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:header.tpl' => 1,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_634cb6aa14afe8_21498947 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+function content_634d5f3e63f3a5_23663740 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <div class="login mt-5 w-27 mx-auto">

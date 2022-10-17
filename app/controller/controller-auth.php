@@ -1,6 +1,7 @@
 <?php
-    require './app/model/model-user.php';
-    require './app/view/view-auth.php';
+    require_once './app/model/model-user.php';
+    require_once './app/view/view-auth.php';
+
 
 class AuthController{
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-15 23:16:58
+/* Smarty version 4.2.1, created on 2022-10-17 15:47:47
   from 'C:\xampp\HTDOCS\Web-2\TPE1\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634b234a94c203_24460498',
+  'unifunc' => 'content_634d5d035bc3e4_24288144',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cbeb0d195c90b73a35d47bfc2a1cd2b6eee2ffb4' => 
     array (
       0 => 'C:\\xampp\\HTDOCS\\Web-2\\TPE1\\templates\\header.tpl',
-      1 => 1665868617,
+      1 => 1666014465,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634b234a94c203_24460498 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634d5d035bc3e4_24288144 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +37,7 @@ function content_634b234a94c203_24460498 (Smarty_Internal_Template $_smarty_tpl)
     <header>
       <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="home">Navbar</a>
+          <a class="navbar-brand" href="home">Peliculas</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>

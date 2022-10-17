@@ -7,12 +7,13 @@ class movieController{
 
     private $model;
     private $view;
-    // private  $authHelper;
+    private $genders;
+    private $header;
+   
     function __construct(){
 
-        $this->model = new movieModel();
-        $this->view = new movieView();
-        
+       
+
         if (strnatcasecmp(phpversion(), '5.4.0') >= 0) {
             if (session_status() == PHP_SESSION_NONE) {
                 session_start();
@@ -21,7 +22,13 @@ class movieController{
             if (session_id() == '') {
                 session_start();
             }
-        }   
+        }  
+        
+        $this->model = new movieModel();
+        $this->view = new movieView();
+        $this->genders = $this->model->getAllGenders();
+        $this->header = $this->view->showHeader($this->genders);
+
     
     }
   
@@ -31,10 +38,10 @@ class movieController{
     public function showHome(){
 
        
-      $genders = $this->model->getAllGenders();
-      $this->view->showHeader($genders);
-      $this->view->showForm($genders);
-      $this->view->showHome($genders);
+        
+
+      $this->view->showForm($this->genders);
+      $this->view->showHome($this->genders);
         
 
  
@@ -113,9 +120,9 @@ class movieController{
 
     function selectGender($gender){
 
-        $genders = $this->model->getAllGenders();
+        
         $selected = $this->model->getGender($gender);
-        $this->view->showHeader($genders);     
+        // $this->view->showHeader($genders);     
         $this->view->showSelectedGender($selected);
         
     }
@@ -164,7 +171,7 @@ class movieController{
 
 
         $genders = $this->model->getAllGenders();
-        $this->view->showHeader($genders);
+        // $this->view->showHeader($genders);
         $selectedMovie = $this->model->getSelectedMovie($id); 
         $this->view->showMovie($selectedMovie); 
         
