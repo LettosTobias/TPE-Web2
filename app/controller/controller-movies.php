@@ -129,7 +129,7 @@ class movieController{
         $SelectedMovie = $this->model->getSelectedMovie($id);
         $this->view->showUpdate($SelectedMovie , $actionForm);
         
-        var_dump($SelectedMovie);
+        
 
     
     }
