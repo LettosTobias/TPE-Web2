@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-16 00:21:27
+/* Smarty version 4.2.1, created on 2022-10-17 04:33:06
   from 'C:\xampp\HTDOCS\Web-2\TPE1\templates\movieList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634b3267cf8112_74206691',
+  'unifunc' => 'content_634cbee21483e5_08822056',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '322eea55ad53380634d54a7e4f31414c8e55c682' => 
     array (
       0 => 'C:\\xampp\\HTDOCS\\Web-2\\TPE1\\templates\\movieList.tpl',
-      1 => 1665872486,
+      1 => 1665973984,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_634b3267cf8112_74206691 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634cbee21483e5_08822056 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:form-alta.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -51,7 +51,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <th>Descripcion</th>
             <th>Valoracion</th>
             <th>Imagen</th>
-            <?php if ((isset($_SESSION['USER_ID']))) {?> <th>Acciones</th><?php }?>
+            <?php if ((isset($_SESSION['USER_ID']))) {?><th>Acciones</th><?php }?>
         </thead>
     
         <?php
@@ -91,7 +91,7 @@ $_smarty_tpl->tpl_vars['movie']->do_else = false;
                 </td>
               
                 <td>
-                        <?php if ((isset($_smarty_tpl->tpl_vars['movie']->value->Imagen))) {?> <img class="imagenInput"  src="<?php echo $_smarty_tpl->tpl_vars['movie']->value->Imagen;?>
+                        <?php if ((isset($_smarty_tpl->tpl_vars['movie']->value->Imagen))) {?> <img class="imagenInput" src="<?php echo $_smarty_tpl->tpl_vars['movie']->value->Imagen;?>
 "><?php }?>
                 
                 </td>

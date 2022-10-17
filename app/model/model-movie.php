@@ -90,8 +90,8 @@ class movieModel{
 
     function setMovieDB( $pelicula , $estreno , $genero , $descripcion , $id){
 
-        $query = $this->db->prepare("UPDATE peliculas SET nombre = ? , estreno = ? , id_genero_fk = ? , descripcion = ?  WHERE id = ?");
-        $query->execute([$pelicula , $estreno , $genero , $descripcion , $id]);
+        $query = $this->db->prepare("UPDATE peliculas SET nombre = ? , estreno = ? , descripcion = ? , id_genero_fk = ?  WHERE id = ?");
+        $query->execute([$pelicula , $estreno , $descripcion , $genero , $id]);
     }
     
 

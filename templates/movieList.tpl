@@ -18,7 +18,7 @@
             <th>Descripcion</th>
             <th>Valoracion</th>
             <th>Imagen</th>
-            {if isset($smarty.session.USER_ID)} <th>Acciones</th>{/if}
+            {if isset($smarty.session.USER_ID)}<th>Acciones</th>{/if}
         </thead>
     
         {foreach from=$selected item=$movie}
@@ -44,7 +44,7 @@
                 </td>
               
                 <td>
-                        {if isset($movie->Imagen)} <img class="imagenInput"  src="{$movie->Imagen}">{/if}
+                        {if isset($movie->Imagen)} <img class="imagenInput" src="{$movie->Imagen}">{/if}
                 
                 </td>
                 {if isset($smarty.session.USER_ID)}

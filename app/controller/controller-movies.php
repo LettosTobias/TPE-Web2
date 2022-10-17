@@ -128,7 +128,8 @@ class movieController{
         $authHelper->checkLoggedIn();
         $SelectedMovie = $this->model->getSelectedMovie($id);
         $this->view->showUpdate($SelectedMovie , $actionForm);
-      
+        
+        var_dump($SelectedMovie);
 
     
     }
@@ -136,7 +137,7 @@ class movieController{
 
     function setMovie(){
 
- 
+        
         $authHelper = new AuthHelper();
         $authHelper->checkLoggedIn();
         $id = $_POST['id'];
@@ -144,11 +145,11 @@ class movieController{
         $genero = $_POST['genero'];
         $descripcion = $_POST['descripcion'];
         $pelicula = $_POST['pelicula'];
-
+        
          
         $this->model->setMovieDB($pelicula, $estreno, $genero , $descripcion , $id);
 
-    
+        
         $SelectedMovie = $this->model->getSelectedMovie($id);
         header("location: " . BASE_URL  . "gender" . "/$SelectedMovie->id_genero_fk");
     
@@ -161,7 +162,7 @@ class movieController{
 
     function showMovie($id){
 
-        
+
         $genders = $this->model->getAllGenders();
         $this->view->showHeader($genders);
         $selectedMovie = $this->model->getSelectedMovie($id); 

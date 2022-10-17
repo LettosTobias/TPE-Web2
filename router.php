@@ -59,7 +59,13 @@ switch ($params[0]) {
         $movieController = new movieController();
         $movieController->updateMovie($id , $actionForm);
         break;
-
+    
+    case 'setMovie':
+        $movieController = new movieController();
+        $movieController->setMovie();       
+        break;
+    
+    
     case 'movie': 
         
         $id = $params[1];
@@ -83,10 +89,7 @@ switch ($params[0]) {
         break;
 
 
-    case 'setMovie':
-        $movieController = new movieController();
-        $movieController->setMovie();       
-        break;
+
 
  default:
        echo("404");
