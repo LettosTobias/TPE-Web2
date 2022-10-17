@@ -34,6 +34,13 @@ private $smarty;
         $this->smarty->display('header.tpl');
     }
 
+    
+    function showForm($genders){
+
+        $this->smarty->assign('genders' , $genders);
+        $this->smarty->display('form-alta.tpl');
+    }
+
 
 
     function showUpdate($selectedMovie , $actionForm){

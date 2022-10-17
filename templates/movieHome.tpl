@@ -14,7 +14,7 @@
     </div>
  
 
-{include file="form-alta.tpl"}
+
 
 
 

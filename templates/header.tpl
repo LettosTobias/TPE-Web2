@@ -38,13 +38,11 @@
             <form class="d-flex" role="search">
                 
                 {if !isset($smarty.session.USER_ID)}
-                  <li class="nav-item">
+                  
                     <button class= "btn btn-outline-dark"> <a class="nav-link" href="login" >Login</a></button>
-                  </li>
+                  
                 {else} 
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="logout">Logout ({$smarty.session.USER_EMAIL})</a>
-                  </li>
+                  <button class= "btn btn-outline-dark"> <a class="nav-link" href="logout" > Logout/ {$smarty.session.USER_NAME}</a></button>   
                 {/if}
 
             </form>

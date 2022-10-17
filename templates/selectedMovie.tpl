@@ -16,7 +16,7 @@
             {if !$selectedMovie->valoracion} VALORADA MALA{/if}
         
         </li>
-        <li class="list-group-item">A third item</li>
+       
     </ul>
     <div class="card-body">
         <a href="gender/{$selectedMovie->id_genero_fk}" class="btn btn-dark">Atras</a>

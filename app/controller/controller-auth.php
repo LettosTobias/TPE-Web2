@@ -2,7 +2,7 @@
     require './app/model/model-user.php';
     require './app/view/view-auth.php';
 
-class loginController{
+class AuthController{
 
     private $model;
     private $view;
@@ -24,7 +24,7 @@ class loginController{
         // toma los datos del form
         $email = $_POST['email'];
         $password = $_POST['password'];
-
+        
         // busco el usuario por email
         $user = $this->model->getUserByEmail($email);
 
@@ -35,16 +35,17 @@ class loginController{
             session_start();
             $_SESSION['USER_ID'] = $user->id;
             $_SESSION['USER_EMAIL'] = $user->email;
+            $_SESSION['USER_NAME'] = $user->name;
             $_SESSION['IS_LOGGED'] = true;
 
-            header("Location: " . BASE_URL);
+            header("Location: " . BASE_URL );
         } else {
             // si los datos son incorrectos muestro el form con un erro
            $this->view->showFormLogin("El usuario o la contraseña no existe.");
         } 
     }
 
-    public function logout() {
+    public function showLogout() {  
         session_start();
         session_destroy();
         header("Location: " . BASE_URL);

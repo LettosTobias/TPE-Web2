@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-14 20:11:26
+/* Smarty version 4.2.1, created on 2022-10-15 23:16:58
   from 'C:\xampp\HTDOCS\Web-2\TPE1\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6349a64e4141f6_40269041',
+  'unifunc' => 'content_634b234a94c203_24460498',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cbeb0d195c90b73a35d47bfc2a1cd2b6eee2ffb4' => 
     array (
       0 => 'C:\\xampp\\HTDOCS\\Web-2\\TPE1\\templates\\header.tpl',
-      1 => 1665771071,
+      1 => 1665868617,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6349a64e4141f6_40269041 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634b234a94c203_24460498 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,14 +71,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <form class="d-flex" role="search">
                 
                 <?php if (!(isset($_SESSION['USER_ID']))) {?>
-                  <li class="nav-item">
+                  
                     <button class= "btn btn-outline-dark"> <a class="nav-link" href="login" >Login</a></button>
-                  </li>
+                  
                 <?php } else { ?> 
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="logout">Logout (<?php echo $_SESSION['USER_EMAIL'];?>
-)</a>
-                  </li>
+                  <button class= "btn btn-outline-dark"> <a class="nav-link" href="logout" > Logout/ <?php echo $_SESSION['USER_NAME'];?>
+</a></button>   
                 <?php }?>
 
             </form>

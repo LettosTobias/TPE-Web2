@@ -1,35 +1,51 @@
 <?php
     require_once './app/view/view-movies.php';
     require_once './app/model/model-movie.php';
+    require_once './app/helpers/auth-helper.php';
 
 class movieController{
 
     private $model;
     private $view;
-
+    // private  $authHelper;
     function __construct(){
 
         $this->model = new movieModel();
         $this->view = new movieView();
-
-
+        
+        if (strnatcasecmp(phpversion(), '5.4.0') >= 0) {
+            if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+            }
+        } else {
+            if (session_id() == '') {
+                session_start();
+            }
+        }   
+    
     }
+  
+    
+    
 
     public function showHome(){
 
-      
+       
       $genders = $this->model->getAllGenders();
       $this->view->showHeader($genders);
+      $this->view->showForm($genders);
       $this->view->showHome($genders);
+        
 
-
-    //trato de que me direccione una vez agregada la pelicula
+ 
          
     }
 
 
     function addMovie(){
-
+        
+        $authHelper = new AuthHelper();
+        $authHelper->checkLoggedIn();
         if(!empty($_POST['pelicula'] && $_POST['estreno'] && $_POST['genero'] && $_POST['descripcion'])){
 
             $pelicula = $_POST['pelicula'];
@@ -57,7 +73,9 @@ class movieController{
 
 
     function deleteMovie($id){
-       
+        
+        $authHelper = new AuthHelper();
+        $authHelper->checkLoggedIn();
         $SelectedMovie = $this->model->getSelectedMovie($id);
         $this->model->deleteMovieByID($id);
         
@@ -71,7 +89,7 @@ class movieController{
     function changeValoracion($valoracion, $id){
 
        
-        
+
         if($valoracion == 0){
             
             $valoracion=0;
@@ -94,7 +112,7 @@ class movieController{
 
 
     function selectGender($gender){
-        
+
         $genders = $this->model->getAllGenders();
         $selected = $this->model->getGender($gender);
         $this->view->showHeader($genders);     
@@ -106,7 +124,8 @@ class movieController{
     
     function updateMovie($id , $actionForm){
         
-
+        $authHelper = new AuthHelper();
+        $authHelper->checkLoggedIn();
         $SelectedMovie = $this->model->getSelectedMovie($id);
         $this->view->showUpdate($SelectedMovie , $actionForm);
       
@@ -117,8 +136,9 @@ class movieController{
 
     function setMovie(){
 
-       
-        
+ 
+        $authHelper = new AuthHelper();
+        $authHelper->checkLoggedIn();
         $id = $_POST['id'];
         $estreno = $_POST['estreno'];
         $genero = $_POST['genero'];
@@ -141,6 +161,7 @@ class movieController{
 
     function showMovie($id){
 
+        
         $genders = $this->model->getAllGenders();
         $this->view->showHeader($genders);
         $selectedMovie = $this->model->getSelectedMovie($id); 

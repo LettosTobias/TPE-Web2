@@ -4,23 +4,29 @@
 
 
 <form id="formUpdate" action="{$actionForm}"   method="POST">
+    
+    <input type="hidden" value="{$selectedMovie->id}" name="id">
+    
+    <div class="input-group input-group-sm mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Pelicula</span>
+    <input type="text" name="pelicula" value="{$selectedMovie->nombre}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Estreno</span>
+    <input type="text" name="pelicula" value="{$selectedMovie->estreno}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Genero</span>
+        <select name="genero">
+            <option selected value="{$selectedMovie->id_genero_fk}">{$selectedMovie->id_genero_fk}</option>
+        </select>
+    </div>
+    <div class="input-group input-group-sm mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Descripcion</span>
+    <input type="text" name="pelicula" value="{$selectedMovie->descripcion}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+     
 
-    <input type="hidden" value="{$selectedMovie->id}" name="id"> 
-    <label for="pelicula" value="">Pelicula</label>
-    <input type="text" name="pelicula" value="{$selectedMovie->nombre}">
-
-    <label for="estreno" value="">Estreno</label>
-    <input type="text" name="estreno" value="{$selectedMovie->estreno}">
-
-        <label for="genero" value="">Genero</label>
-            <select name="genero">
-                <option selected value="{$selectedMovie->id_genero_fk}">{$selectedMovie->id_genero_fk}</option>
-            </select>
-
-    <label for="descripcion" value="">Descripcion</label>
-    <input type="text" name="descripcion" value="{$selectedMovie->descripcion}">
-
-
-<input class="btn btn-dark" type="submit" value="Enviar" >
+    <input class="btn btn-dark" type="submit" value="Enviar" >
 
 </form>

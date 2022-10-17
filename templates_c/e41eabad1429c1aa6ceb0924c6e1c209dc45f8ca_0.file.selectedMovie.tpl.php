@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-13 21:40:49
+/* Smarty version 4.2.1, created on 2022-10-16 00:06:46
   from 'C:\xampp\HTDOCS\Web-2\TPE1\templates\selectedMovie.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634869c142bf39_08170310',
+  'unifunc' => 'content_634b2ef67d57f2_42122129',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e41eabad1429c1aa6ceb0924c6e1c209dc45f8ca' => 
     array (
       0 => 'C:\\xampp\\HTDOCS\\Web-2\\TPE1\\templates\\selectedMovie.tpl',
-      1 => 1665690047,
+      1 => 1665871604,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_634869c142bf39_08170310 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634b2ef67d57f2_42122129 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
@@ -44,7 +44,7 @@ function content_634869c142bf39_08170310 (Smarty_Internal_Template $_smarty_tpl)
             <?php if (!$_smarty_tpl->tpl_vars['selectedMovie']->value->valoracion) {?> VALORADA MALA<?php }?>
         
         </li>
-        <li class="list-group-item">A third item</li>
+       
     </ul>
     <div class="card-body">
         <a href="gender/<?php echo $_smarty_tpl->tpl_vars['selectedMovie']->value->id_genero_fk;?>

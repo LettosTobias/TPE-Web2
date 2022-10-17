@@ -55,3 +55,37 @@ input{
     justify-content: space-between;
 }
 
+
+
+.imagenDesc{
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+.login{ 
+    border-radius: 1rem;
+    justify-content: center;
+    border:1px solid black;
+    box-shadow:  5px 5px 20px 0px;
+    padding: 5%;
+    width:30rem;
+
+}
+
+.iniciarSession{
+
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+
+}
+
+.registrarse{
+
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
