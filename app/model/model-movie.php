@@ -9,22 +9,27 @@ class movieModel{
         $this->db = new PDO('mysql:host=localhost;'.'dbname=tpe_parte1;charset=utf8', 'root', '');
     }
 
-    public function getAllGenders(){
-
-        $query =$this->db->prepare("SELECT genero FROM genero");
-        $query->execute();
-        
-        $genders = $query->fetchAll(PDO::FETCH_OBJ);
-
-        return $genders;
-    }    
+   
 
     function getAllMovies(){
 
         $query = $this->db->prepare("SELECT * FROM peliculas");
         $query->execute();
 
+
     }
+
+
+    function getAll(){
+
+        $query = $this->db->prepare("SELECT * FROM peliculas INNER JOIN generos");
+        $query->execute();
+        
+        return $query->fetch(PDO::FETCH_OBJ) ;
+        
+
+    }
+
 
 
 
@@ -66,12 +71,21 @@ class movieModel{
         $query->execute([$id]);
     }
     
+    function getMoviesByGender($id){
 
-    function getGender($gender){
-
-        $query = $this->db->prepare("SELECT * FROM peliculas WHERE id_genero_fk = ?");
-        $query->execute([$gender]);
+        $query = $this->db->prepare("SELECT * FROM peliculas INNER JOIN generos WHERE peliculas.id_genero_fk = ? AND generos.id_genero = ?");
+        $query->execute([$id , $id]);
         $moviesGender = $query ->fetchAll(PDO::FETCH_OBJ);  
+
+        return $moviesGender;
+
+    }
+
+    function getGender($id){
+
+        $query = $this->db->prepare("SELECT * FROM peliculas INNER JOIN generos WHERE peliculas.id_genero_fk = ? AND generos.id_genero = ?");
+        $query->execute([$id , $id]);
+        $moviesGender = $query->fetch(PDO::FETCH_OBJ);  
 
         return $moviesGender;
     }
@@ -80,7 +94,7 @@ class movieModel{
 
     function getSelectedMovie($id){
 
-        $query = $this->db->prepare("SELECT * FROM peliculas WHERE id = ?");
+        $query = $this->db->prepare("SELECT * FROM peliculas INNER JOIN generos WHERE id = ?");
         $query->execute([$id]);
         $selectedMovie = $query ->fetch(PDO::FETCH_OBJ);
 

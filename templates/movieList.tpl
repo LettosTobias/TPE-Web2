@@ -4,11 +4,15 @@
 
 
 
-    {foreach from=$selected item=$movie}
+    
+    {foreach from=$selected item=$item}
+        
+   
 
-        <h1>{$movie->id_genero_fk}</h1>  
-        {break} 
-    {/foreach}        
+        <h1>{$item->genero}</h1>
+        {break}
+      {/foreach}   
+            
   
   <table class="table table-dark table-striped">
         <thead>
@@ -21,41 +25,43 @@
             {if isset($smarty.session.USER_ID)}<th>Acciones</th>{/if}
         </thead>
     
-        {foreach from=$selected item=$movie}
+        
         <tbody> 
+        {foreach from=$selected item=$item}
             <tr>
-                <td> <a href="movie/{$movie->id}"> <img src="{BASE_URL}/img/expand_circle.png"> </a> </td>
-                <td>{$movie->nombre}</td>
-                <td>{$movie->estreno}</td>
-                <td>{$movie->descripcion}</td>
+                <td> <a href="movie/{$item->id}"> <img src="{BASE_URL}/img/expand_circle.png"> </a> </td>
+                <td>{$item->nombre}</td>
+                <td>{$item->estreno}</td>
+                <td>{$item->descripcion}</td>
 
                 <td>
-                   <button class="btn {if $movie->valoracion}btn-success{/if}" type ="button" {if !isset($smarty.session.USER_ID)} disabled {/if}> 
+                   <button class="btn {if $item->valoracion}btn-success{/if}" type ="button" {if !isset($smarty.session.USER_ID)} disabled {/if}> 
                     
-                        <a  href="valoracion/1/{$movie->id}" > <img src="{BASE_URL}/img/like.png"> </a>
+                        <a  href="valoracion/1/{$item->id}" > <img src="{BASE_URL}/img/like.png"> </a>
                     
                     </button>
 
-                   <button class="btn {if !$movie->valoracion}btn-danger{/if}" type ="button" {if !isset($smarty.session.USER_ID)} disabled {/if}> 
+                   <button class="btn {if !$item->valoracion}btn-danger{/if}" type ="button" {if !isset($smarty.session.USER_ID)} disabled {/if}> 
                         
-                        <a  href="valoracion/0/{$movie->id}" > <img src="{BASE_URL}/img/dislike.png"> </a>
+                        <a  href="valoracion/0/{$item->id}" > <img src="{BASE_URL}/img/dislike.png"> </a>
                     
                     </button>       
                 </td>
               
                 <td>
-                        {if isset($movie->Imagen)} <img class="imagenInput" src="{$movie->Imagen}">{/if}
+                        {if isset($item->Imagen)} <img class="imagenInput" src="{$item->Imagen}">{/if}
                 
                 </td>
                 {if isset($smarty.session.USER_ID)}
                     <td>
-                        <a class="btn btn-danger" type ="button" href="delete/{$movie->id}">Borrar</a>
-                        <a class="btn btn-primary" type ="button" href="update/{$movie->id}"> <img src="{BASE_URL}/img/edit.png"></a>
+                        <a class="btn btn-danger" type ="button" href="delete/{$item->id}">Borrar</a>
+                        <a class="btn btn-primary" type ="button" href="update/{$item->id}"> <img src="{BASE_URL}/img/edit.png"></a>
                     </td>
                 {/if}          
-            </tr>      
+            </tr>  
+            {/foreach}    
         </tbody>
-       {/foreach}
+       
    
     </table>
 

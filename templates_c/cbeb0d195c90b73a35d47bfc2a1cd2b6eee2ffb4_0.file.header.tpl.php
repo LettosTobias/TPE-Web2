@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-17 16:21:27
+/* Smarty version 4.2.1, created on 2022-11-09 21:46:51
   from 'C:\xampp\HTDOCS\Web-2\TPE1\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634d64e7a70671_30262221',
+  'unifunc' => 'content_636c11bbd40061_54301884',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cbeb0d195c90b73a35d47bfc2a1cd2b6eee2ffb4' => 
     array (
       0 => 'C:\\xampp\\HTDOCS\\Web-2\\TPE1\\templates\\header.tpl',
-      1 => 1666016486,
+      1 => 1668026773,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634d64e7a70671_30262221 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636c11bbd40061_54301884 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,7 +59,7 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['gender']->value)
 $_smarty_tpl->tpl_vars['gender']->do_else = false;
 ?>
                   
-                  <li><a class="dropdown-item" href="gender/<?php echo $_smarty_tpl->tpl_vars['gender']->value->genero;?>
+                  <li><a class="dropdown-item" href="gender/<?php echo $_smarty_tpl->tpl_vars['gender']->value->id_genero;?>
 "><?php echo $_smarty_tpl->tpl_vars['gender']->value->genero;?>
 </a></li>
     

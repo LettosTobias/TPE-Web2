@@ -4,7 +4,8 @@
 
        function __construct(){
 
- 
+            
+
        } 
 /**
 * Verifica que el user este logueado y si no lo está

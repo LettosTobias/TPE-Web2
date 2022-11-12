@@ -30,7 +30,7 @@
                 <ul class="dropdown-menu">
                   {foreach from=$genders item=$gender}
                   
-                  <li><a class="dropdown-item" href="gender/{$gender->genero}">{$gender->genero}</a></li>
+                  <li><a class="dropdown-item" href="gender/{$gender->id_genero}">{$gender->genero}</a></li>
     
                   {/foreach}
                 </ul>

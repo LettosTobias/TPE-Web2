@@ -1,6 +1,7 @@
 <?php
 require_once './app/controller/controller-movies.php';
 require_once './app/controller/controller-auth.php';
+require_once './app/controller/controller-gender.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -31,19 +32,25 @@ switch ($params[0]) {
         break;
 
     case 'validate':
+        $movieController = new movieController();
         $authController = new AuthController();
         $authController->validateUser();
         break;
        
 
     case 'home':
-        $movieController = new movieController();
-        $movieController->showHome();
+        $genderController = new genderController();
+        $genderController->showHome();
         break;
 
     case 'add':
         $movieController = new movieController();
         $movieController->addMovie();
+        break;
+
+    case 'addGender':
+        $genderController = new genderController();
+        $genderController->addGender();
         break;
 
     case 'delete':
@@ -53,6 +60,13 @@ switch ($params[0]) {
         $movieController->deleteMovie($id);
         break;
         
+    case 'deleteGender':
+
+        $genero = $params[1];
+        $genderController = new genderController();
+        $genderController->deleteGender($genero);
+        break;
+        
     case 'update':
 
         $id = $params[1];
@@ -60,10 +74,26 @@ switch ($params[0]) {
         $movieController = new movieController();
         $movieController->updateMovie($id , $actionForm);
         break;
+
+
+    case 'updateGender':
+
+        $genero = $params[1];
+        $genderController = new genderController();
+        $genderController->updateGender($genero);
+        break;
+
     
     case 'setMovie':
+        
         $movieController = new movieController();
         $movieController->setMovie();       
+        break;
+
+
+    case 'setGender':
+        $genderController = new genderController();
+        $genderController->setGender();       
         break;
     
     
@@ -76,15 +106,17 @@ switch ($params[0]) {
         break;
 
     case 'gender':
-        $gender = $params[1];
+        $id = $params[1];
         $movieController = new movieController();
-        $movieController->selectGender($gender);
+        $movieController->selectGender($id);
         break;
 
 
     case 'valoracion':
+
         $valoracion = $params[1];
         $id = $params[2];
+        
         $movieController = new movieController();
         $movieController->changeValoracion($valoracion , $id);  
         break;
@@ -93,6 +125,6 @@ switch ($params[0]) {
 
 
  default:
-       echo("404");
+       echo("404 error :(");
         break;
 }

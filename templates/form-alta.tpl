@@ -14,7 +14,7 @@
                         <select name="genero" required>
                         <option selected>...</option>
                         {foreach from=$genders item=$gender}
-                            <option>{$gender->genero}</option>
+                            <option value="{$gender->id_genero}">{$gender->genero}</option>
                         {/foreach}
                         </select>
                 <div class="imagenDesc">

@@ -11,16 +11,16 @@ private $smarty;
 
     
     public function showHome($genders){
-        $this->smarty->assign('genders' , $genders); 
-               
+        $this->smarty->assign('genders' , $genders);                 
         //muestro el template
         $this->smarty->display('movieHome.tpl');
 
     }
 
-    function showSelectedGender($selected){
+    function showSelectedGender($selected ){
 
         $this->smarty->assign('selected' , $selected);
+        // $this->smarty->assign('genders' , $genders);
         $this->smarty->display('movieList.tpl');
 
     }
@@ -42,6 +42,13 @@ private $smarty;
     }
 
 
+    function showFormHome($genders){
+
+        $this->smarty->assign('genders' , $genders);
+        $this->smarty->display('formHome.tpl');
+    }
+
+
 
     function showUpdate($selectedMovie , $actionForm){
 
@@ -57,6 +64,13 @@ private $smarty;
         $this->smarty->assign('selectedMovie' , $selectedMovie);  
         $this->smarty->display('selectedMovie.tpl');
     }
+
    
+    public function showFormEditHome($selectedGenero){
+
+        $this->smarty->assign('selectedGenero' , $selectedGenero);  
+        $this->smarty->display('formEditHome.tpl');
+        
+    }
 }
     

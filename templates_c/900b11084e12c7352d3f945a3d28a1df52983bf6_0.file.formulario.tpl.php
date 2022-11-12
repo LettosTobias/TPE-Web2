@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-17 15:59:03
+/* Smarty version 4.2.1, created on 2022-11-12 21:27:25
   from 'C:\xampp\HTDOCS\Web-2\TPE1\templates\formulario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634d5fa7727925_73707123',
+  'unifunc' => 'content_637001adda0202_67052043',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '900b11084e12c7352d3f945a3d28a1df52983bf6' => 
     array (
       0 => 'C:\\xampp\\HTDOCS\\Web-2\\TPE1\\templates\\formulario.tpl',
-      1 => 1666015141,
+      1 => 1668284844,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634d5fa7727925_73707123 (Smarty_Internal_Template $_smarty_tpl) {
+function content_637001adda0202_67052043 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
@@ -44,10 +44,12 @@ function content_634d5fa7727925_73707123 (Smarty_Internal_Template $_smarty_tpl)
     <div class="input-group input-group-sm mb-3">
     <span class="input-group-text" id="inputGroup-sizing-sm">Genero</span>
         <select name="genero">
-            <option selected value="<?php echo $_smarty_tpl->tpl_vars['selectedMovie']->value->id_genero_fk;?>
-"><?php echo $_smarty_tpl->tpl_vars['selectedMovie']->value->id_genero_fk;?>
+            <option value="<?php echo $_smarty_tpl->tpl_vars['selectedMovie']->value->id_genero_fk;?>
+"><?php echo $_smarty_tpl->tpl_vars['selectedMovie']->value->genero;?>
 </option>
+               
         </select>
+
     </div>
     <div class="input-group input-group-sm mb-3">
         <span class="input-group-text" id="inputGroup-sizing-sm">Descripcion</span>

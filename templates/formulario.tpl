@@ -17,8 +17,10 @@
     <div class="input-group input-group-sm mb-3">
     <span class="input-group-text" id="inputGroup-sizing-sm">Genero</span>
         <select name="genero">
-            <option selected value="{$selectedMovie->id_genero_fk}">{$selectedMovie->id_genero_fk}</option>
+            <option value="{$selectedMovie->id_genero_fk}">{$selectedMovie->genero}</option>
+               
         </select>
+
     </div>
     <div class="input-group input-group-sm mb-3">
         <span class="input-group-text" id="inputGroup-sizing-sm">Descripcion</span>
